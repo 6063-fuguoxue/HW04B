@@ -31,7 +31,7 @@ Another randomized property is the size of the shape. The size of a rectangle, t
 One thing interesting about the rectangles is their orientations. Since the two lines separate the canvas into four quadrants, the rectangles can lie in any of them. 
 
 ## Execution
-### Randomization of colors and shapes
+### Randomize colors and shapes
 The randomization of lines is easy: I directly used `random()` to randomize their stroke weight between 30 and 300, and their color code between 0 and 255.  
 To realize the randomization of colors and shapes, I used the switch statement. The switch statement takes in an integer index and looks up the case corresponding to this index in its case list, then executes the code lines in that case. 
 
