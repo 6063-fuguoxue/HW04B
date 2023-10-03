@@ -32,10 +32,11 @@ One thing interesting about the rectangles is their orientations. Since the two 
 
 ## Execution
 ### Randomization of colors and shapes
+The randomization of lines is easy: I directly used `random()` to randomize their stroke weight between 30 and 300, and their color code between 0 and 255.  
 To realize the randomization of colors and shapes, I used the switch statement. The switch statement takes in an integer index and looks up the case corresponding to this index in its case list, then executes the code lines in that case. 
 
 ### Generate random integers
-Since I didn't find a random integer function in p5.js or JavaScript, I wrote one named `randomInt(max)`, which will receive an integer and generate an integer smaller than the received one. 
+My program requires random integer generation due to the use of switch statements. Since I didn't find a random integer function in p5.js or JavaScript, I wrote a function named `randomInt(max)`, which will receive an integer and generate an integer smaller than the received one. 
 
 ### Draw rectangle
 As planned, a rectangle can be drawn in any of the four quadrants divided out by the two lines. The easiest way I thought of is to first translate the canvas to the clicking position, then rotate it by 0, PI/2, PI, or 3*PI/2 radians. Upon finishing the rectangle drawing, the canvas is rotated and translated back to the original position so that the upcoming drawings won't mess up. 
