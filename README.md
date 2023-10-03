@@ -29,3 +29,28 @@ I also decided to randomize the color of these shapes. Each rectangle and circle
 Another randomized property is the size of the shape. The size of a rectangle, the diameter of a circle, and the stroke weight of a line set are all randomly selected in certain ranges of numbers. 
 
 One thing interesting about the rectangles is their orientations. Since the two lines separate the canvas into four quadrants, the rectangles can lie in any of them. 
+
+## Execution
+### Randomization of colors and shapes
+To realize the randomization of colors and shapes, I used the switch statement. The switch statement takes in an integer index and looks up the case corresponding to this index in its case list, then executes the code lines in that case. 
+
+### Generate random integers
+Since I didn't find a random integer function in p5.js or JavaScript, I wrote one named `randomInt(max)`, which will receive an integer and generate an integer smaller than the received one. 
+
+### Draw rectangle
+As planned, a rectangle can be drawn in any of the four quadrants divided out by the two lines. The easiest way I thought of is to first translate the canvas to the clicking position, then rotate it by 0, PI/2, PI, or 3*PI/2 radians. Upon finishing the rectangle drawing, the canvas is rotated and translated back to the original position so that the upcoming drawings won't mess up. 
+
+### When to draw the lines? 
+Initially, I let the code draw lines before a rectangle. However, since the lines have a stroke weight, the following rectangle would weirdly cover part of the two lines, making viewers think that the two lines are two very thin rectangles. To avoid this visual misunderstanding, I changed the sequence to drawing a rectangle first, then the two lines. 
+<table>
+  <tr>
+    <td>
+      <img src='./hw04b-3.png' alt='hw04b-3.png'>
+    </td>
+    <td>
+      <img src='./hw04b-2.png' alt='hw04b-2.png'>
+    </td>
+  </tr>
+</table>
+
+### Where to put the circle code?
