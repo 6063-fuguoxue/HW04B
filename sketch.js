@@ -5,6 +5,9 @@ function setup() {
 
 let yVelocity = 10;
 let D = 0;
+let shapeIndex = 0;
+let colorCode = 'red';
+let xPos = 0, yPos = 0;
 
 function draw() {
   if ((shapeIndex == 1)) {
@@ -21,17 +24,13 @@ function randomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-let shapeIndex = 0;
-let colorCode = 'red';
-let xPos = 0, yPos = 0;
-
 function mouseClicked() {
-  noStroke();
   shapeIndex = randomInt(3);
-  colorIndex = randomInt(3);
+  colorIndex = randomInt(4);
   xPos = mouseX;
   yPos = mouseY;
 
+  // Randomly choose from red, blue, yellow, and black
   switch(colorIndex) {
     case 0: colorCode = 'red';
     break;
@@ -39,8 +38,10 @@ function mouseClicked() {
     break;
     case 2: colorCode = 'yellow';
     break;
+    case 3: colorCode = 'black';
   }
 
+  noStroke();
   fill(colorCode);
   
   switch(shapeIndex) {
